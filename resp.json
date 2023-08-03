@@ -1,0 +1,23 @@
+{
+  "memes": [
+    {
+      "id": 6698,
+      "description": "Bezos, Phallic Rockets, Taxes. Twitter didn’t disappoint.: https://twitter.com/TheDailyShow/status/1417478230068563973?s=20",
+      "url": "https://i.imgur.com/8JTc5z3.jpg",
+      "type": "image/jpeg"
+    },
+    {
+      "id": 237030,
+      "description": "Rocket Money is a scam.: Prevented a $30 charge of something I don't use anymore. Feels good.",
+      "url": "https://i.imgur.com/q3cZlpv.png",
+      "type": "image/png"
+    },
+    {
+      "id": 237032,
+      "description": "Rocket Money is a scam.: Cat tax.",
+      "url": "https://i.imgur.com/yaZoCFP.jpg",
+      "type": "image/jpeg"
+    }
+  ],
+  "available": 20
+}

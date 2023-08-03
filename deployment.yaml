@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mememuseum
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: mememuseum
+  template:
+    metadata:
+      labels:
+        app: mememuseum
+    spec:
+      containers:
+        - name: mememuseum
+          image: icr.io/assignment03/assignment03
+          ports:
+            - containerPort: 5000

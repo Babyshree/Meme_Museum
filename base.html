@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="img-src i.imgur.com images.unsplash.com;">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>
+      {% block title %}
+        base
+      {% endblock %}
+    </title>
+   
+  </head>
+
+  <body class="bg-[url('https://images.unsplash.com/photo-1596517335913-66b7be20c921?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')] bg-cover">
+    
+       <div > 
+        <div >
+          {% if user.is_authenticated %}
+            
+              <header class="bg-blue-900 font-sans  flex items-center justify-between  max-w-full">
+                <p class=" text-3xl text-white px-3 py-4 lg:px-16 ">SHPVIBE</p>
+               
+                <nav>
+                  <ul
+                    class=" text-center text-white transition-all py-4 flex justify-center items-center gap-6 px-6 ">
+                    <a href="/">
+                      <li class="py-1 hover:text-orange-400">Home</li>
+                    </a>
+                    <a href="/memeinput">
+                      <li class="py-1 hover:text-orange-400">Meme</li>
+                    </a>
+                   
+                    <a href="/logout" id="logout">
+                      <li class="py-1 hover:text-orange-400">Logout</li>
+                    </a>
+                  </ul>
+                
+              </header>
+              
+          {% else %}
+              
+              <header class="bg-blue-900 font-sans relative lg:flex items-center justify-between fixed">
+              <p class=" text-3xl text-white px-6 py-4 lg:px-16 ">SHPVIBE</p>
+              <div class="absolute top-3 right-4 lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 16 16"
+          id="hamburger"
+        >
+          <path
+            fill="none"
+            stroke="white"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"
+          />
+        </svg>
+      </div>
+      <nav>
+        <ul
+          id="navbar"
+          class=" text-center text-white transition-all py-4 lg:flex justify-center items-center gap-6 px-16"
+        >
+          <a href="/Home" id="home">
+            <li class="py-1 hover:text-orange-400">Home</li>
+          </a>
+          <a   id="about" href="/about" >
+            <li class="py-1 hover:text-orange-400">About</li>
+          </a>
+          <a  id="login" href="/login">
+            <li class="py-1 hover:text-orange-400" >Login</li>
+          </a>
+          <a  id="signUp" href="/sign-up">
+            <li class="py-1 hover:text-orange-400" >Register</li>
+          </a>
+          <a id="contact" href="/contact">
+            <li class="py-1 hover:text-orange-400">Contact</li>
+          </a>
+        </ul>
+      
+              </header>
+              
+          {% endif %}
+          
+        </div>
+      </div>
+    </nav>
+
+   
+    
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    
+    <script>
+      hamBurger = document
+        .getElementById("hamburger")
+        .addEventListener("click", function () {
+          document.getElementById("navbar").classList.toggle("text-center");
+          document.getElementById("navbar").classList.toggle("hidden");
+        });
+    </script>
+
+  </body>
+</html>
